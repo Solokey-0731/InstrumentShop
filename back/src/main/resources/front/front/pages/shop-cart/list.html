@@ -65,8 +65,10 @@
 
 			<div class="paper-container">
 				<span style="font-size: 18px;font-weight: bold;color: #00acc1 ;margin-right: 20px;">
-						购物车物品总价格：{{totalPrice}} 元
-					</span>
+						购物车物品总价格：{{totalPrice}} 元，运费：{{totalWeight * 8}} 元，总重：{{totalWeight}} 千克
+				</span>
+				<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"0 5px","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(23, 124, 176, 1)","color":"rgba(255, 255, 255, 1)","borderRadius":"6px","borderWidth":"0","width":"auto","lineHeight":"40px","fontSize":"16px","borderStyle":"solid"}'  @click="clearCart">清空购物车</button>
+
 				<table class="layui-table" lay-skin="nob">
 					<thead>
 						<tr>
@@ -79,13 +81,13 @@
 					</thead>
 					<tbody>
 						<tr v-for="(item,index) in dataList" v-bind:key="index">
-							<td style="display: flex;text-align: left;">
+							<td style="display: flex;text-align: left;height:100px">
 								<img :src="item.picture" style="width: 100px;height: 100px;object-fit: cover;">
 								<div style="margin-left: 10px;margin-top: 10px;">
 									{{item.goodname}}
 								</div>
 							</td>
-							<td style="width: 100px;">{{item.price}} RMB</td>
+							<td style="width: 100px;">{{item.price}} 元</td>
 							<td style="width: 140px;">
 								<div class="num-picker">
 									<button type="button" @click="reduceCartNum(index)" class="layui-btn layui-btn-primary">-</button>
@@ -94,7 +96,7 @@
 									<button type="button" @click="addCartNum(index)" class="layui-btn layui-btn-primary">+</button>
 								</div>
 							</td>
-							<td style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} RMB</td>
+							<td style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} 元</td>
 							<td style="width: 100px;">
 								<button @click="deleteCart(index)" type="button" class="layui-btn layui-btn-radius btn-theme">
 									<i class="layui-icon">&#xe640;</i> 删除
@@ -103,6 +105,14 @@
 						</tr>
 					</tbody>
 				</table>
+				<h2>选择运输方式</h2>
+				<br>
+				<!-- 下拉框 -->
+				<label for="shipping-method">运输方式:</label>
+				<select id="shipping-method" name="shipping-method">
+					<option value="ground" selected>地面</option>
+					<option value="air">空运</option>
+				</select>
 
 				<div class="btn-container">
 
@@ -140,6 +150,31 @@
 						for (var item of this.dataList) {
 							total += item.price * item.buynumber
 						}
+						return total.toFixed(2);
+					},
+					totalWeight: function(){
+						// 计算商品的重量，该物品价格除以1000，
+						var total = 0;
+						for (var item of this.dataList) {
+							total += item.price * item.buynumber
+						}
+						total /= 1000;
+						// 再加上一个值，检测商品的类别，吉他5kg，钢琴90kg，键盘10kg，提琴2kg，鼓50kg，效果器1kg
+						for (var item of this.dataList) {
+							if (item.goodname.includes('吉他')) {
+								total += 5 * item.buynumber;
+							} else if (item.goodname.includes('钢琴')) {
+								total += 90 * item.buynumber;
+							} else if (item.goodname.includes('键盘')) {
+								total += 10 * item.buynumber;
+							} else if (item.goodname.includes('提琴')) {
+								total += 2 * item.buynumber;
+							} else if (item.goodname.includes('电子鼓')) {
+								total += 50 * item.buynumber;
+							} else if (item.goodname.includes('效果器')) {
+								total += 1 * item.buynumber;
+							}
+    					}
 						return total.toFixed(2);
 					}
 				},
@@ -186,6 +221,18 @@
 						layui.http.requestJson(`cart/delete`, 'post', [item.id], function(res) {
 							window.location.reload();
 						});
+					},
+					// 清空购物车
+					clearCart() {
+						if (this.dataList.length === 0) {
+							layui.layer.msg('购物车已空，不能删除');
+							return;
+						}
+						for(var item of this.dataList){
+							layui.http.requestJson(`cart/delete`, 'post', [item.id], function(res) {
+								window.location.reload();
+							});
+						}
 					},
 					// 购买商品	
 					buyClick() {

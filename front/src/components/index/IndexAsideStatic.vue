@@ -127,7 +127,7 @@ export default {
         document.querySelectorAll('.menulist .el-menu-item').forEach(el=>{
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(174, 182, 191, 1)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()
@@ -135,13 +135,13 @@ export default {
           })
           el.addEventListener("focus", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(174, 182, 191, 1)"
           })
         })
         document.querySelectorAll('.menulist .el-submenu__title').forEach(el=>{
           el.addEventListener("mouseenter", e => {
             e.stopPropagation()
-            el.style.backgroundColor = "rgba(238, 221, 129, 1)"
+            el.style.backgroundColor = "rgba(174, 182, 191, 1)"
           })
           el.addEventListener("mouseleave", e => {
             e.stopPropagation()

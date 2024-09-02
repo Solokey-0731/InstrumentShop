@@ -52,6 +52,9 @@ public class UserController{
 	@PostMapping(value = "/login")
 	public R login(String username, String password, String captcha, HttpServletRequest request) {
 		UserEntity user = userService.selectOne(new EntityWrapper<UserEntity>().eq("username", username));
+		if(user==null){
+			return R.error("用户不存在!");
+		}
 		if(user==null || !user.getPassword().equals(password)) {
 			return R.error("账号或密码不正确");
 		}

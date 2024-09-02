@@ -1636,14 +1636,15 @@
 					staticClass: "container loginIn",
 					staticStyle:
 					{
-						backgroundImage: "url(http://localhost:8080/wangshangshangchengB/admin/dist/0.jpg)"
+						backgroundImage: "url(http://localhost:8080/wangshangshangchengB/front/0.jpg)"
 					}
 				}, [n("div",
 				{
 					class: "left center",
 					staticStyle:
 					{
-						backgroundColor: "rgba(208, 163, 140, 0.53)"
+						background: "linear-gradient(45deg, rgba(77, 208, 225, 0.5), rgba(239, 154, 154, 0.5))", /* 渐变色背景 */
+						// backgroundColor: "rgba(104, 103, 140, 0.53)"
 					}
 				}, [n("el-form",
 				{
@@ -1663,7 +1664,7 @@
 					{
 						color: "rgba(255, 255, 255, 1)"
 					}
-				}, [t._v("网上商城系统登录")])]), n("el-form-item",
+				}, [t._v("乐器商城系统登录")])]), n("el-form-item",
 				{
 					class: "style1",
 					attrs:

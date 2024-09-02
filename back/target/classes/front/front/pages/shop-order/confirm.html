@@ -78,7 +78,7 @@
 								</div>
 							</td>
 							<td v-if="type==2" style="width: 100px;">{{item.price}} 积分</td>
-							<td v-else style="width: 100px;">{{item.price}} RMB</td>
+							<td v-else style="width: 100px;">{{item.price}} 元</td>
 							<td v-if="seat==1" style="width: 140px;">
 								{{item.activeSeat}}
 							</td>
@@ -86,15 +86,15 @@
 								{{item.buynumber}}
 							</td>
 							<td v-if="type==2" style="width: 100px;">{{item.price*item.buynumber}} 积分</td>
-							<td v-else-if="seat==1"  style="width: 100px;">{{item.total}} RMB</td>
-							<td v-else  style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} RMB</td>
+							<td v-else-if="seat==1"  style="width: 100px;">{{item.total}} 元</td>
+							<td v-else  style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} 元</td>
 						</tr>
 					</tbody>
 				</table>
 
 				<div v-if="seat==1" class="btn-container">
 					<span style="font-size: 18px;font-weight: bold;color: #ce0b07;margin-right: 20px;">
-						总价：{{dataList[0].total}}RMB
+						总价：{{dataList[0].total}}元
 					</span>
 					<button @click="xuanzuoClick()" type="button" class="layui-btn layui-btn-lg btn-theme">
 						<i class="layui-icon">&#xe657;</i> 支付
@@ -110,7 +110,7 @@
 				</div>
 				<div v-else class="btn-container">
 					<span style="font-size: 18px;font-weight: bold;color: #ce0b07;margin-right: 20px;">
-						总价：{{totalPrice.toFixed(2)}}RMB
+						总价：{{totalPrice.toFixed(2)}}元
 					</span>
 					<button @click="payClick()" type="button" class="layui-btn layui-btn-lg btn-theme">
 						<i class="layui-icon">&#xe657;</i> 支付

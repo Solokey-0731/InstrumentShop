@@ -100,7 +100,7 @@
 								</thead>
 								<tbody>
 									<tr v-for="(item,index) in dataList" v-bind:key="index">
-										<td style="width: 50px;">
+										<td style="width: 50px;height: 100px">
 											{{item.orderid}}
 										</td>
 										<td style="display: flex;text-align: left;width: 250px;">
@@ -109,11 +109,11 @@
 												{{item.goodname}}
 											</div>
 										</td>
-										<td style="width: 100px;">{{item.price}} RMB</td>
+										<td style="width: 100px;">{{item.price}} 元</td>
 										<td style="width: 50px;">
 											{{item.buynumber}}
 										</td>
-										<td style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} RMB</td>
+										<td style="width: 100px;">{{(item.price*item.buynumber).toFixed(2)}} 元</td>
 										<td style="width: 200px;">
 											{{item.address}}
 										</td>

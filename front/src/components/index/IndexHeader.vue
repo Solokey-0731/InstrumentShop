@@ -32,7 +32,7 @@
 				dialogVisible: false,
 				ruleForm: {},
 				user: {},
-				heads: {"headLogoutFontHoverColor":"rgba(41, 42, 42, 1)","headFontSize":"20px","headUserInfoFontColor":"rgba(238, 221, 129, 1)","headBoxShadow":"0 1px 6px #444","headTitleImgHeight":"44px","headLogoutFontHoverBgColor":"rgba(247, 142, 142, 1)","headFontColor":"rgba(153, 239, 237, 1)","headTitleImg":false,"headHeight":"60px","headTitleImgBorderRadius":"22px","headTitleImgUrl":"http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg","headBgColor":"#4F4949","headTitleImgBoxShadow":"0 1px 6px #444","headLogoutFontColor":"rgba(153, 239, 237, 1)","headUserInfoFontSize":"16px","headTitleImgWidth":"44px","headTitleStyle":"2","headLogoutFontSize":"16px"},
+				heads: {"headLogoutFontHoverColor":"rgba(41, 42, 42, 1)","headFontSize":"20px","headUserInfoFontColor":"rgba(174, 182, 191, 1)","headBoxShadow":"0 1px 6px #444","headTitleImgHeight":"44px","headLogoutFontHoverBgColor":"rgba(247, 142, 142, 1)","headFontColor":"rgba(153, 239, 237, 1)","headTitleImg":false,"headHeight":"60px","headTitleImgBorderRadius":"22px","headTitleImgUrl":"http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg","headBgColor":"#4F4949","headTitleImgBoxShadow":"0 1px 6px #444","headLogoutFontColor":"rgba(153, 239, 237, 1)","headUserInfoFontSize":"16px","headTitleImgWidth":"44px","headTitleStyle":"2","headLogoutFontSize":"16px"},
 			};
 		},
 		created() {

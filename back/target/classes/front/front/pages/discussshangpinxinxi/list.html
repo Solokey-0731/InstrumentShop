@@ -275,7 +275,7 @@ width: 100%;
 	      <div @click="jump('../discussshangpinxinxi/detail.html?id='+item.id)" v-for="(item,index) in dataList" :key="index" class="list-item" :class="5=='3'?'list-item3':5=='5'?'list-item5':''">
 	        <div class="list-item-body animation-box" :style='{"padding":"10px","boxShadow":"0 0 0px ","margin":"0 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
 																																								<div class="info">
-					<div v-if="item.price" :style='{"padding":"0","margin":"10px 0 0 0","backgroundColor":"rgba(0,0,0,0)","color":"rgba(255, 71, 119, 1)","borderRadius":"0","textAlign":"left","width":"100%","fontSize":"15px"}' class="price">{{item.price}} RMB</div>
+					<div v-if="item.price" :style='{"padding":"0","margin":"10px 0 0 0","backgroundColor":"rgba(0,0,0,0)","color":"rgba(255, 71, 119, 1)","borderRadius":"0","textAlign":"left","width":"100%","fontSize":"15px"}' class="price">{{item.price}} 元</div>
 																																																	</div>
 	        </div>
 	      </div>

@@ -131,9 +131,9 @@
                 <div :style='{"padding":"6px 15px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(69, 90, 140, 1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"dotted"}'
                      v-if="detail.price" class="detail-item">
                     <span :style='{"padding":"0 12px 0 0","minWidth":"110px","fontSize":"15px","color":"rgba(80, 97, 109, 1)","textAlign":"left"}'>价格：</span>
-                    <span :style='{"padding":"5px 0","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"red","borderRadius":"0","textAlign":"left","borderWidth":"0","width":"100%","lineHeight":"20px","fontSize":"20px","borderStyle":"solid"}'
+                    <span :style='{"padding":"5px 0","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"blue","borderRadius":"0","textAlign":"left","borderWidth":"0","width":"100%","lineHeight":"20px","fontSize":"20px","borderStyle":"solid"}'
                           class="price">
-								{{detail.price}}RMB
+								{{detail.price}}元
 							</span>
                 </div>
                 <div :style='{"padding":"6px 15px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(69, 90, 140, 1)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"dotted"}'
@@ -201,7 +201,7 @@
 
                     <div class="num-picker">
                         <button style="height:auto;"
-                                :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(244, 121, 131, 1)","color":"#666","borderRadius":"4px 0 0 4px","borderWidth":"1px","width":"34px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
+                                :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(127, 179, 213, 1)","color":"#666","borderRadius":"4px 0 0 4px","borderWidth":"1px","width":"34px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
                                 type="button" @click="buynumber>0?buynumber--:buynumber"
                                 class="layui-btn layui-btn-primary">-
                         </button>
@@ -210,12 +210,12 @@
                                type="number" v-model="buynumber" id="buynumber" name="buynumber" class="layui-input"
                                disabled="disabled"></input>
                         <button style="height:auto;"
-                                :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(68, 206, 246, 1)","color":"#666","borderRadius":"0 4px 4px 0","borderWidth":"1px","width":"34px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
+                                :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(195, 155, 211, 1)","color":"#666","borderRadius":"0 4px 4px 0","borderWidth":"1px","width":"34px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
                                 type="button" @click="buynumber++" class="layui-btn layui-btn-primary">+
                         </button>
                     </div>
                     <button style="height:auto;"
-                            :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,.3)","margin":"0 5px","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(244, 121, 131, 1)","color":"rgba(240, 252, 255, 1)","borderRadius":"6px","borderWidth":"0","width":"auto","lineHeight":"40px","fontSize":"16px","borderStyle":"solid"}'
+                            :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,.3)","margin":"0 5px","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(127, 179, 213, 1)","color":"rgba(240, 252, 255, 1)","borderRadius":"6px","borderWidth":"0","width":"auto","lineHeight":"40px","fontSize":"16px","borderStyle":"solid"}'
                             @click="addCartTap" type="button" class="layui-btn layui-btn-warm">
                         添加到购物车
                     </button>
@@ -495,6 +495,14 @@
                         icon: 5
                     });
                     return
+                }
+                // 检查购买数量是否大于1
+                if (this.buynumber < 1) {
+                layer.msg("购买数量必须大于1", {
+                    time: 2000,
+                    icon: 5
+                    });
+                    return;
                 }
                 layui.http.requestJson('cart/save', 'post', {
                     tablename: `${this.detailTable}`,

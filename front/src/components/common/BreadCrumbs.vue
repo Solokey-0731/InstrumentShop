@@ -1,5 +1,5 @@
 <template>
-  <el-breadcrumb class="app-breadcrumb" separator="(●'◡'●)" style="height:50px;backgroundColor:rgba(79, 73, 73, 1);borderRadius:0px;padding:0px 20px 0px 20px;boxShadow:;borderWidth:2px;borderStyle:;borderColor:rgba(193, 180, 180, 0.5);">
+  <el-breadcrumb class="app-breadcrumb" separator="(●'◡'●)" style="height:50px;backgroundColor:rgba(33, 97, 140, 1);borderRadius:0px;padding:0px 20px 0px 20px;boxShadow:;borderWidth:2px;borderStyle:;borderColor:rgba(193, 180, 180, 0.5);">
     <transition-group name="breadcrumb" class="box" :style="1==1?'justifyContent:flex-start;':1==2?'justifyContent:center;':'justifyContent:flex-end;'">
       <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
         <span v-if="item.redirect==='noRedirect'||index==levelList.length-1" class="no-redirect">{{ item.name }}</span>

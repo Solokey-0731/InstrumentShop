@@ -933,7 +933,7 @@
 						{
 							headLogoutFontHoverColor: "rgba(41, 42, 42, 1)",
 							headFontSize: "20px",
-							headUserInfoFontColor: "rgba(238, 221, 129, 1)",
+							headUserInfoFontColor: "rgba(174, 182, 191, 1)",
 							headBoxShadow: "0 1px 6px #444",
 							headTitleImgHeight: "44px",
 							headLogoutFontHoverBgColor: "rgba(247, 142, 142, 1)",
@@ -1413,20 +1413,20 @@
 								{
 									t.addEventListener("mouseenter", (function(e)
 									{
-										e.stopPropagation(), t.style.backgroundColor = "rgba(238, 221, 129, 1)"
+										e.stopPropagation(), t.style.backgroundColor = "rgba(174, 182, 191, 1)"
 									})), t.addEventListener("mouseleave", (function(e)
 									{
 										e.stopPropagation(), t.style.backgroundColor = "#988181"
 									})), t.addEventListener("focus", (function(e)
 									{
-										e.stopPropagation(), t.style.backgroundColor = "rgba(238, 221, 129, 1)"
+										e.stopPropagation(), t.style.backgroundColor = "rgba(174, 182, 191, 1)"
 									}))
 								})), document.querySelectorAll(".menulist .el-submenu__title")
 								.forEach((function(t)
 								{
 									t.addEventListener("mouseenter", (function(e)
 									{
-										e.stopPropagation(), t.style.backgroundColor = "rgba(238, 221, 129, 1)"
+										e.stopPropagation(), t.style.backgroundColor = "rgba(174, 182, 191, 1)"
 									})), t.addEventListener("mouseleave", (function(e)
 									{
 										e.stopPropagation(), t.style.backgroundColor = "#988181"
@@ -1662,7 +1662,7 @@
 					{
 						color: "rgba(255, 255, 255, 1)"
 					}
-				}, [t._v("网上商城系统登录")])]), n("el-form-item",
+				}, [t._v("乐器商城系统登录")])]), n("el-form-item",
 				{
 					class: "style1",
 					attrs:
@@ -18199,7 +18199,7 @@
 					staticStyle:
 					{
 						height: "50px",
-						backgroundColor: "rgba(79, 73, 73, 1)",
+						backgroundColor: "rgba(33, 97, 140, 1)",
 						borderRadius: "0px",
 						padding: "0px 20px 0px 20px",
 						borderWidth: "2px",

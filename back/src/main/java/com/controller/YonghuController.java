@@ -58,6 +58,9 @@ public class YonghuController {
 	@RequestMapping(value = "/login")
 	public R login(String username, String password, String captcha, HttpServletRequest request) {
 		YonghuEntity user = yonghuService.selectOne(new EntityWrapper<YonghuEntity>().eq("yonghuming", username));
+		if(user == null){
+			return R.error("账号不存在!");
+		}
 		if(user==null || !user.getMima().equals(password)) {
 			return R.error("账号或密码不正确");
 		}
